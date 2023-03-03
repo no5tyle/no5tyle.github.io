@@ -18,20 +18,20 @@ weight = 2
 
 [[menu.primary]]
 name = "Projects"
-url = "/projects"
+url = "projects"
 weight = 3
 
 [[menu.primary]]
 name = "Collection"
-url = "/collection"
+url = "collection"
 weight = 4
 
 [[menu.primary]]
 name = "Posts"
-url = "/blog"
+url = "blog"
 weight = 5
 
 [[menu.primary]]
 name = "Contact"
-url = "/contact"
+url = "contact"
 weight = 6
