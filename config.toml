@@ -1,8 +1,8 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'nostyle.systems'
 
-theme = 'kaslaanka'
+theme = ["kaslaanka", "hugo-shortcode-gallery"]
 
 [params]
 sitename = "nostyle.systems"
@@ -11,16 +11,6 @@ defaultList = "global"
 paginationLen = 3
 projectsURL = "https://nostyle.systems"
 
-[[params.myprojects]]
-name = "Totally Awesome Project"
-description = "Machine Learning Magic!!!"
-url = "https://example.com"
-
-[[params.myprojects]]
-name = "Kaslaanka"
-description = "The best hugo theme ever!!!"
-url = "https://github.com/M1cR0xf7/kaslaanka"
-
 [[menu.primary]]
 name = "About"
 url = "/"
@@ -28,20 +18,20 @@ weight = 2
 
 [[menu.primary]]
 name = "Projects"
-url = "/projects.xml"
+url = "/projects"
 weight = 3
 
 [[menu.primary]]
 name = "Collection"
-url = "/collection.xml"
+url = "/collection"
 weight = 4
 
 [[menu.primary]]
 name = "Posts"
-url = "/posts.xml"
+url = "/blog"
 weight = 5
 
 [[menu.primary]]
 name = "Contact"
-url = "/contact.xml"
+url = "/contact"
 weight = 6
