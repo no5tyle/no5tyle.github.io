@@ -9,7 +9,7 @@ sitename = "nostyle.systems"
 copyrights = "Simon Fuller"
 defaultList = "global"
 paginationLen = 3
-projectsURL = "https://nostyle.systems"
+projectsURL = "https://no5tyle.github.io"
 
 [[menu.primary]]
 name = "About"
