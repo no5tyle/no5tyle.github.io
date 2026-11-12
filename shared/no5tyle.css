@@ -78,6 +78,22 @@
   --bar-filter: blur(20px) saturate(180%);
 
   /*
+    The bar's sizes, the same in every app. A computer's bar holds the app switcher, the app's name with
+    a line under it, and its pages; a phone's is shorter, with the switcher, the name and one button.
+    Heights leave out the safe area at the top (the notch), which goes on as padding.
+  */
+  --n5-bar-height: 60px;
+  --n5-bar-icon: 36px;
+  --n5-bar-pad: 20px;
+  --n5-bar-height-compact: 52px;
+  --n5-bar-icon-compact: 32px;
+  --n5-bar-pad-compact: 12px;
+  /* The round button at the right of a phone's bar (menu, account) */
+  --n5-bar-button-compact: 36px;
+  --n5-bar-title-size: 17px;
+  --n5-bar-sub-size: 12px;
+
+  /*
     Liquid Glass, for controls that float over the content (tab bars, bottom bars): nearly clear, with
     what's behind blurred and made more vivid, lit like a bevelled lens
   */

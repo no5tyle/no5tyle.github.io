@@ -17,7 +17,7 @@ It's one static page (`index.html`) in the same style as the apps: Apple's syste
 <link rel="stylesheet" href="https://no5tyle.github.io/shared/no5tyle.css">
 ```
 
-Each app's own stylesheet keeps only what's particular to it. A change here reaches every app the next time it's opened, without redeploying them, so:
+Each app's own stylesheet keeps only what's particular to it. The bar across the top uses the `--n5-bar-*` sizes on every app: 60px tall with a 36px switcher on a computer, 52px with a 32px switcher on a phone. A change here reaches every app the next time it's opened, without redeploying them, so:
 
 - add a new variable rather than changing what an existing one means;
 - check the apps after a change (each one's tests load this file from the live site).
