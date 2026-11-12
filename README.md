@@ -7,4 +7,4 @@ The homepage at https://no5tyle.github.io/, linking to:
 
 It's one static page (`index.html`) in the same style as both apps: Apple's system colours and font, rounded cards and capsule buttons, and dark mode that follows the device.
 
-Every push to `main` is published by `.github/workflows/pages.yml` to the `gh-pages` branch, which GitHub Pages serves.
+Every push to `main` is published to GitHub Pages by `.github/workflows/pages.yml`.
