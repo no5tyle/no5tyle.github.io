@@ -22,4 +22,15 @@ Each app's own stylesheet keeps only what's particular to it. A change here reac
 - add a new variable rather than changing what an existing one means;
 - check the apps after a change (each one's tests load this file from the live site).
 
+## The app switcher
+
+`shared/app-switcher.js` defines `<n5-app-switcher current="…">`, the menu at the top left of every app for moving between them. Each app puts it where its icon was, with that icon inside as a stand-in until the script runs:
+
+```html
+<script src="https://no5tyle.github.io/shared/app-switcher.js" defer></script>
+<n5-app-switcher current="programmer"><img src="…" alt="" width="36" height="36"></n5-app-switcher>
+```
+
+The list of apps lives in that file, and the icons are in `shared/icons/`. To add an app, add it there: every app's switcher shows it the next time it's opened. Its styles are the `n5-switch` rules in `shared/no5tyle.css`.
+
 Every push to `main` is published to GitHub Pages by `.github/workflows/pages.yml`.

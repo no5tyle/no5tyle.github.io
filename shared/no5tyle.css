@@ -153,3 +153,193 @@
     --toast-bg: rgba(58, 58, 60, 0.95);
   }
 }
+
+/*
+  The app switcher at the top left of every app (shared/app-switcher.js). Before the script runs, the
+  element shows whatever it holds: the app's own icon.
+*/
+n5-app-switcher {
+  --n5-switch-size: 36px;
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+}
+
+n5-app-switcher > img {
+  width: var(--n5-switch-size);
+  height: var(--n5-switch-size);
+  border-radius: calc(var(--n5-switch-size) * 0.28);
+}
+
+.n5-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 0;
+  margin: -4px;
+  padding: 4px 3px 4px 4px;
+  border: 0;
+  border-radius: calc(var(--n5-switch-size) * 0.28 + 4px);
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.n5-switch-btn:hover,
+.n5-switch-btn[aria-expanded='true'] {
+  background: var(--hover);
+  color: var(--text);
+  filter: none;
+}
+
+.n5-switch-btn:active {
+  transform: none;
+}
+
+.n5-switch-btn:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.n5-switch-icon {
+  display: block;
+  width: var(--n5-switch-size);
+  height: var(--n5-switch-size);
+  border-radius: calc(var(--n5-switch-size) * 0.28);
+}
+
+.n5-switch-chevron {
+  width: 12px;
+  height: 12px;
+  flex: none;
+  transition: transform 0.2s;
+}
+
+.n5-switch-btn[aria-expanded='true'] .n5-switch-chevron {
+  transform: rotate(180deg);
+}
+
+.n5-switch-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+.n5-switch-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -4px;
+  z-index: 1000;
+  display: grid;
+  gap: 2px;
+  width: min(20rem, calc(100vw - 24px));
+  padding: 6px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow), 0 0 0 0.5px var(--border);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.3;
+  text-align: left;
+  transform-origin: top left;
+  animation: n5-switch-in 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.n5-switch-backdrop[hidden],
+.n5-switch-menu[hidden] {
+  display: none;
+}
+
+@keyframes n5-switch-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .n5-switch-menu {
+    animation: none;
+  }
+}
+
+.n5-switch-head {
+  padding: 6px 10px 4px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.n5-switch-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.n5-switch-item:hover,
+.n5-switch-item:focus-visible {
+  background: var(--hover);
+  outline: none;
+}
+
+.n5-switch-item[aria-current='page'] {
+  background: var(--tint-fill);
+}
+
+.n5-switch-item img {
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border-radius: 10px;
+}
+
+.n5-switch-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.n5-switch-name {
+  font-weight: 600;
+}
+
+.n5-switch-tagline {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.n5-switch-check {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  color: var(--tint);
+}
+
+.n5-switch-all {
+  margin-top: 4px;
+  border-top: 0.5px solid var(--border);
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding-top: 10px;
+}
+
+@media print {
+  n5-app-switcher {
+    display: none !important;
+  }
+}
