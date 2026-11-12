@@ -1,0 +1,155 @@
+/*
+  no5tyle's shared look: the colours, rounding, glass and type that Beacon, the Program Builder,
+  Snag Calc and this homepage all use. Each app links this file first and keeps only its own extras in
+  its own stylesheet:
+
+    <link rel="stylesheet" href="https://no5tyle.github.io/shared/no5tyle.css">
+
+  Apple's system colours (iOS 26, Liquid Glass): a grouped grey background with white content on it,
+  one blue tint for controls, capsule buttons, rounded fields, rounder cards. Dark mode follows the
+  device on screen; printing always uses the light colours.
+
+  Changing a value here changes every app the next time it's opened, so add new names rather than
+  changing what an existing one means.
+*/
+:root {
+  color-scheme: light dark;
+
+  /* Surfaces: the grouped background, and content on it */
+  --bg: #f2f2f7;
+  --surface: #fff;
+  --surface-2: #f7f7fa;
+  --surface-3: #e5e5ea;
+  --fill: rgba(118, 118, 128, 0.12);
+  --fill-strong: rgba(118, 118, 128, 0.2);
+  --hover: rgba(118, 118, 128, 0.1);
+  --stripe: rgba(118, 118, 128, 0.06);
+  --border: rgba(60, 60, 67, 0.16);
+  --border-soft: rgba(60, 60, 67, 0.1);
+  --input-border: rgba(60, 60, 67, 0.2);
+
+  /* Text */
+  --text: #000;
+  --text-2: #3c3c43;
+  --muted: #6e6e73;
+  --faint: #aeaeb2;
+
+  /* Scouts navy, for app icons and marks; the gold accent */
+  --brand: #052767;
+  --accent: #e8a33d;
+
+  /* The tint, as iOS tints controls: buttons, links, the current tab or page */
+  --tint: #007aff;
+  --primary: var(--tint);
+  --primary-hover: #0066d6;
+  --primary-text: #fff;
+  --link: var(--tint);
+  --brand-text: var(--tint);
+  --tint-fill: rgba(0, 122, 255, 0.12);
+  --tint-fill-strong: rgba(0, 122, 255, 0.2);
+  --focus-ring: rgba(0, 122, 255, 0.35);
+
+  /* Apple's accessible green, red and orange */
+  --success: #248a3d;
+  --danger: #d70015;
+  --warning: #ff9500;
+  --alert-success-bg: rgba(52, 199, 89, 0.14);
+  --alert-success-border: transparent;
+  --alert-success-text: #1b6b30;
+  --alert-warning-bg: rgba(255, 149, 0, 0.14);
+  --alert-warning-border: transparent;
+  --alert-warning-text: #8a4b00;
+  --alert-danger-bg: rgba(255, 59, 48, 0.12);
+  --alert-danger-border: transparent;
+  --alert-danger-text: #b0000f;
+  --alert-info-bg: rgba(0, 122, 255, 0.1);
+  --alert-info-border: transparent;
+  --alert-info-text: #0055b3;
+
+  /* Menus and sheets that float over the page */
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.16);
+
+  /* Concentric rounding: controls are capsules (999px), fields rounded, cards and panels rounder */
+  --radius: 0.75rem;
+  --radius-lg: 1.375rem;
+
+  /* A bar across the top: the grouped background, see-through, like iOS's navigation bar */
+  --bar-bg: rgba(242, 242, 247, 0.82);
+  --bar-filter: blur(20px) saturate(180%);
+
+  /*
+    Liquid Glass, for controls that float over the content (tab bars, bottom bars): nearly clear, with
+    what's behind blurred and made more vivid, lit like a bevelled lens
+  */
+  --glass-bg: rgba(255, 255, 255, 0.2);
+  --glass-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 40%);
+  --glass-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.45), inset -1px -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 8px 32px rgba(255, 255, 255, 0.15), 0 0 0 0.5px rgba(0, 0, 0, 0.08),
+    0 12px 40px rgba(0, 0, 0, 0.25);
+  --glass-filter: blur(12px) saturate(200%) brightness(1.1) contrast(1.1);
+  --glass-text: #000;
+  --glass-motion: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  --glass-active-bg: rgba(0, 0, 0, 0.06);
+  --glass-active-text: var(--tint);
+
+  /* A short message at the bottom of the screen */
+  --toast-bg: rgba(28, 28, 30, 0.92);
+
+  --font:
+    -apple-system, system-ui, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Segoe UI', Roboto,
+    Arial, sans-serif;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000;
+    --surface: #1c1c1e;
+    --surface-2: #2c2c2e;
+    --surface-3: #3a3a3c;
+    --fill: rgba(118, 118, 128, 0.24);
+    --fill-strong: rgba(118, 118, 128, 0.36);
+    --hover: rgba(118, 118, 128, 0.18);
+    --stripe: rgba(118, 118, 128, 0.1);
+    --border: rgba(84, 84, 88, 0.6);
+    --border-soft: rgba(84, 84, 88, 0.4);
+    --input-border: rgba(84, 84, 88, 0.65);
+
+    --text: #fff;
+    --text-2: #ebebf5;
+    --muted: #98989f;
+    --faint: #636366;
+
+    --tint: #0a84ff;
+    --primary-hover: #409cff;
+    --tint-fill: rgba(10, 132, 255, 0.18);
+    --tint-fill-strong: rgba(10, 132, 255, 0.28);
+    --focus-ring: rgba(10, 132, 255, 0.45);
+
+    --success: #30d158;
+    --danger: #ff453a;
+    --warning: #ff9f0a;
+    --alert-success-bg: rgba(48, 209, 88, 0.16);
+    --alert-success-text: #7ee29b;
+    --alert-warning-bg: rgba(255, 159, 10, 0.16);
+    --alert-warning-text: #ffc670;
+    --alert-danger-bg: rgba(255, 69, 58, 0.16);
+    --alert-danger-text: #ff8a82;
+    --alert-info-bg: rgba(10, 132, 255, 0.16);
+    --alert-info-text: #7cb8ff;
+
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+
+    --bar-bg: rgba(0, 0, 0, 0.78);
+
+    /* Tinted a little dark, so text on the glass stays readable over bright content behind it */
+    --glass-bg: rgba(18, 18, 20, 0.4);
+    --glass-shadow:
+      inset 1px 1px 0 rgba(255, 255, 255, 0.45), inset -1px -1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 8px 32px rgba(255, 255, 255, 0.15), 0 12px 40px rgba(0, 0, 0, 0.25);
+    --glass-text: #fff;
+    --glass-active-bg: rgba(255, 255, 255, 0.14);
+
+    --toast-bg: rgba(58, 58, 60, 0.95);
+  }
+}

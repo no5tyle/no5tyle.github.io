@@ -19,7 +19,7 @@ jobs:
       - name: Collect the site files
         run: |
           mkdir _site
-          cp index.html beacon-icon.png .nojekyll _site/
+          cp -r index.html beacon-icon.png .nojekyll shared _site/
       - uses: actions/upload-pages-artifact@v3
   deploy:
     needs: build
