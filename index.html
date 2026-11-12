@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>no5tyle</title>
-  <meta name="description" content="Free tools for Scouts Australia leaders: Beacon and the Program Builder.">
+  <meta name="description" content="Free tools for Scouts Australia leaders: Beacon, the Program Builder, Snag Calc and Pinewood Control.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23052767'/%3E%3Ctext x='16' y='22' font-family='system-ui,sans-serif' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3En5%3C/text%3E%3C/svg%3E">
@@ -43,6 +43,11 @@
     .icon { width: 60px; height: 60px; flex: none; border-radius: 14px; }
     .app h2 { margin: 0; font-size: 22px; letter-spacing: -.015em; }
     .app-tag { margin: 0; font-size: 14px; color: var(--muted); }
+    .wip {
+      display: inline-block; margin-left: 6px; padding: 2px 9px; vertical-align: 3px;
+      border-radius: 999px; background: var(--alert-warning-bg); color: var(--alert-warning-text);
+      font-size: 12px; font-weight: 600; letter-spacing: 0;
+    }
     .app p.desc { margin: 0; color: var(--text-2); }
     .app ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
     .app li { padding: 4px 11px; border-radius: 999px; background: var(--fill); color: var(--text-2); font-size: 13.5px; }
@@ -89,10 +94,35 @@
         <ul><li>One-page PDF</li><li>Calendar file</li><li>Spreadsheet import</li><li>Every section</li></ul>
         <span class="open">Open Program Builder</span>
       </a>
+      <a class="app" href="/snagCalc/">
+        <div class="app-head">
+          <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7.5" fill="#052767"/><text x="16" y="22.5" font-size="17" text-anchor="middle">🌭</text></svg>
+          <div>
+            <h2>Snag Calc <span class="wip">In progress</span></h2>
+            <p class="app-tag">Sausage sizzle shopping and restock</p>
+          </div>
+        </div>
+        <p class="desc">Plan a fundraising BBQ: how many sausages, bread, sauce and drinks to buy for the serves you expect, the cheapest packs at each store, and what to restock for day two.</p>
+        <ul><li>Shopping list</li><li>Day 2 restock</li><li>Cost and profit</li><li>Spreadsheet copy</li></ul>
+        <span class="open">Open Snag Calc</span>
+      </a>
+
+      <a class="app" href="https://pinewood.nostyle.app/">
+        <div class="app-head">
+          <svg class="icon" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="120" fill="#052767"/><g transform="translate(51 51) scale(.8)"><path fill="#fff" d="M408.29 262.879a35.125 35.125 0 1 0 35.125 35.125 35.17 35.17 0 0 0-35.125-35.125zm0 62.873a27.736 27.736 0 1 1 27.736-27.737 27.736 27.736 0 0 1-27.736 27.748zm8.876-27.737a8.876 8.876 0 1 1-8.876-8.875 8.876 8.876 0 0 1 8.876 8.875zm-265.538 0a35.125 35.125 0 1 0-35.126 35.126 35.17 35.17 0 0 0 35.126-35.126zm-35.126 27.737a27.736 27.736 0 1 1 27.737-27.737 27.736 27.736 0 0 1-27.737 27.748zm345.452-21.823a53.997 53.997 0 1 0-107.617-5.925 53.665 53.665 0 0 0 5.447 23.61H165.008a53.986 53.986 0 1 0-101.849-15.211C37.542 295.64 21 278.033 21 250.186c0-28.846 86.87-69.418 142.122-71.327v34.094a24.83 24.83 0 0 0 24.83 24.83h47.517a24.774 24.774 0 0 0 24.409-20.758s-1.62-21.668-6.813-25.518l3.407-2.54 24.474 28.08h94.104c63.994-.022 115.95 23.42 115.95 52.266 0 13.314-10.973 25.396-29.046 34.616zm-336.576-5.925a8.876 8.876 0 1 1-8.876-8.876 8.876 8.876 0 0 1 8.876 8.887z"/></g></svg>
+          <div>
+            <h2>Pinewood Control</h2>
+            <p class="app-tag">Run a pinewood derby race night</p>
+          </div>
+        </div>
+        <p class="desc">A big-screen kiosk for the standings and a phone to run each heat. Elimination scoring, late entrants and drop-outs, and a popular vote with a countdown reveal.</p>
+        <ul><li>Live kiosk</li><li>Pair by QR code</li><li>Popular vote</li><li>Reusable racer lists</li></ul>
+        <span class="open">Open Pinewood Control</span>
+      </a>
     </section>
   </main>
   <footer>
-    Source on GitHub: <a href="https://github.com/no5tyle/Beacon">Beacon</a> · <a href="https://github.com/no5tyle/programmer">Program Builder</a>.
+    Source on GitHub: <a href="https://github.com/no5tyle/Beacon">Beacon</a> · <a href="https://github.com/no5tyle/programmer">Program Builder</a> · <a href="https://github.com/no5tyle/snagCalc">Snag Calc</a> · <a href="https://github.com/no5tyle/pinewood-control">Pinewood Control</a>.
     Not made or supported by Scouts Australia.
   </footer>
 </body>

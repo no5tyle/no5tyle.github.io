@@ -4,6 +4,8 @@ The homepage at https://no5tyle.github.io/, linking to:
 
 - [Beacon](https://no5tyle.github.io/Beacon/) ([source](https://github.com/no5tyle/Beacon))
 - [Program Builder](https://no5tyle.github.io/programmer/) ([source](https://github.com/no5tyle/programmer))
+- [Snag Calc](https://no5tyle.github.io/snagCalc/) ([source](https://github.com/no5tyle/snagCalc)), in progress
+- [Pinewood Control](https://pinewood.nostyle.app/) ([source](https://github.com/no5tyle/pinewood-control)), hosted on its own server
 
 It's one static page (`index.html`) in the same style as the apps: Apple's system colours and font, rounded cards and capsule buttons, and dark mode that follows the device.
 
