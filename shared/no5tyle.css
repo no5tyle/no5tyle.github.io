@@ -286,6 +286,7 @@ n5-app-switcher > img {
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
   min-height: 52px;
   padding: 6px 10px;
   border-radius: var(--radius);
