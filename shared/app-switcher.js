@@ -8,8 +8,10 @@
 
   The button shows the current app's icon; it opens a menu of every app, with the current one
   marked, and a link to the homepage. Whatever the element holds is shown until this script runs, so
-  the app's icon stays put if the script can't load. It draws into the page itself (no shadow DOM),
-  styled by the .n5-switch rules in shared/no5tyle.css. Size it with --n5-switch-size (36px).
+  the app's icon stays put if the script can't load. The switcher adds its own nodes after those and
+  hides them with CSS, without touching them, so a framework that rendered them (Svelte, React) still
+  owns them. It draws into the page itself (no shadow DOM), styled by the .n5-switch rules in
+  shared/no5tyle.css. Size it with --n5-switch-size (36px).
 
   To add an app, add it to APPS below: every app's switcher picks it up the next time it's opened.
 */
@@ -41,7 +43,8 @@
       const current = APPS.find((app) => app.id === this.getAttribute('current'));
       const id = `n5-switch-${++count}`;
       this.classList.add('n5-switch');
-      this.innerHTML = `
+      const parts = document.createElement('template');
+      parts.innerHTML = `
         <button type="button" class="n5-switch-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="${id}"
           aria-label="${escape(current ? `${current.name}: switch app` : 'Switch app')}" title="Switch app">
           <img class="n5-switch-icon" src="${escape(current?.icon ?? icon('home.svg'))}" alt="" width="36" height="36">
@@ -61,6 +64,7 @@
             <span class="n5-switch-text"><span class="n5-switch-name">All apps</span><span class="n5-switch-tagline">no5tyle.github.io</span></span>
           </a>
         </div>`;
+      this.append(parts.content);
       this.button = this.querySelector('.n5-switch-btn');
       this.menu = this.querySelector('.n5-switch-menu');
       this.backdrop = this.querySelector('.n5-switch-backdrop');

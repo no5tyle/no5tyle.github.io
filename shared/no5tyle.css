@@ -166,6 +166,11 @@ n5-app-switcher {
   align-items: center;
 }
 
+/* Once the switcher has drawn itself, the stand-in it held is hidden (but left in place) */
+n5-app-switcher.n5-switch > :not(.n5-switch-btn, .n5-switch-menu, .n5-switch-backdrop) {
+  display: none !important;
+}
+
 n5-app-switcher > img {
   width: var(--n5-switch-size);
   height: var(--n5-switch-size);
