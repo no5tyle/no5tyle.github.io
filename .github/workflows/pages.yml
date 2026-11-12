@@ -1,0 +1,26 @@
+# Publishes the homepage. The site is served from the gh-pages branch, so every push
+# to main copies the site files there (README and .github are left out).
+name: Publish homepage
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect the site files
+        run: |
+          mkdir _site
+          cp index.html beacon-icon.png .nojekyll _site/
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          force_orphan: true

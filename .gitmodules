@@ -1,3 +1,0 @@
-[submodule "path_to_submodule"] 
-  path = themes/hugo-shortcode-gallery
-  url = https://github.com/mfg92/hugo-shortcode-gallery.git
